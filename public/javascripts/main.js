@@ -16,10 +16,9 @@ const $peer = {
 requestUserMedia($self.constraints);
 
 async function requestUserMedia(constraints) {
-  const video = document.querySelector('#self');
   $self.stream = await navigator.mediaDevices
     .getUserMedia(constraints);
-  video.srcObject = $self.stream;
+  displayStream('#self', $self.stream);
 }
 
 /**
@@ -38,9 +37,14 @@ const button = document
 
 button.addEventListener('click', handleButton);
 
-
 document.querySelector('#header h1')
   .innerText = `Welcome to Room #${namespace}`;
+
+/* User-Media/DOM */
+function displayStream(selector, stream) {
+  const video = document.querySelector(selector);
+  video.srcObject = stream;
+}
 
 /* DOM Events */
 
@@ -97,8 +101,9 @@ function handleIceCandidate({ candidate }) {
   sc.emit('signal', { candidate:
     candidate });
 }
-function handleRtcTrack() {
-  // attach our track to the DOM somehow
+function handleRtcTrack({ track, streams: [stream] }) {
+  // attach incoming track to the DOM
+  displayStream('#peer', stream);
 }
 
 /* Signaling Channel Events */
@@ -120,6 +125,11 @@ function handleScConnectedPeer() {
 }
 function handleScDisconnectedPeer() {
   console.log('Heard disconnected peer event!');
+  displayStream('#peer', null);
+  $peer.connection.close();
+  $peer.connection = new RTCPeerConnection($self.rtcConfig);
+  registerRtcEvents($peer);
+  establishCallFeatures($peer);
 }
 async function handleScSignal({ description, candidate }) {
   console.log('Heard signal event!');
