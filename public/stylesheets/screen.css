@@ -18,6 +18,7 @@ html {
   padding-bottom: 13px;
   display: flex;
   flex-wrap: wrap;
+  align-items: baseline;
 }
 #header h1 {
   flex: 1 1 auto;
@@ -34,11 +35,6 @@ button {
   line-height: 1;
   padding: 13px;
 }
-#call-button {
-  flex: 0 0 auto;
-  box-sizing: border-box;
-  width: 200px;
-}
 .join {
   background: #092;
   color: #EEE;
@@ -47,8 +43,12 @@ button {
   background: #666;
   color: #EEE;
 }
-
-video{
+#call-button {
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  width: 200px;
+}
+video {
   max-width: 100%;
   display: block;
 }
