@@ -61,13 +61,15 @@ function handleButton(e) {
   }
 }
 
-
 function joinCall() {
   sc.open();
   registerRtcEvents($peer);
   establishCallFeatures($peer);
 }
 function leaveCall() {
+  $peer.connection.close();
+  $peer.connection = new RTCPeerConnection($self.rtcConfig);
+  displayStream('#peer', null);
   sc.close();
 }
 
