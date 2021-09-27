@@ -22,11 +22,27 @@ html {
   left: -10000px;
 }
 button {
-  background: #092;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
   border: 0;
   line-height: 1;
   padding: 13px;
 }
+#call-button {
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  width: 200px;
+}
+.join {
+  background: #092;
+  color: #EEE;
+}
+.leave {
+  background: #666;
+  color: #EEE;
+}
+
 video{
   max-width: 100%;
   display: block;
