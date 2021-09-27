@@ -16,6 +16,11 @@ html {
 }
 #header {
   padding-bottom: 13px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#header h1 {
+  flex: 1 1 auto;
 }
 .access {
   position: absolute;
