@@ -38,6 +38,10 @@ const button = document
 
 button.addEventListener('click', joinCall);
 
+
+document.querySelector('#header h1')
+  .innerText = `Welcome to Room #${namespace}`;
+
 /* DOM Events */
 
 function joinCall() {
