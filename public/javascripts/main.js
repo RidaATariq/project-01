@@ -38,7 +38,7 @@ const button = document
 button.addEventListener('click', handleButton);
 
 document.querySelector('#header h1')
-  .innerText = `Welcome to Room #${namespace}`;
+  .innerText = `Welcome to TA Office Hours Room #${namespace}`;
 
 /* User-Media/DOM */
 function displayStream(selector, stream) {
