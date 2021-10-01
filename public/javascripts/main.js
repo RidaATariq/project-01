@@ -84,8 +84,7 @@ function handleSelfVideo(e) {
   const filter = $self.fx.cycleFilter();
   const dc = $peer.connection.createDataChannel(`filter-${filter}`);
   e.target.className = `filter-${filter}`;
-  dc.onclose = function() {
-    console.log('The channel for', dc.label, 'is now closed');
+
   }
 }
 
@@ -139,9 +138,9 @@ function handleRtcTrack({ track, streams: [stream] }) {
 }
 
 function handleRtcDataChannel(e){
-  console.log('Heard a data channel event', channel);
-  $peer.testChannel = e.channel;
-  console.log('The label is:', $peer.testChannel.label);
+  console.log('Heard a data channel event', channel.label);
+  document.querySelector('#peer')
+   .className = channel.label;
 }
 
 /* Signaling Channel Events */
