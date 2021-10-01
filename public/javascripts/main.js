@@ -44,13 +44,13 @@ const VideoFX = class {
 
 $self.fx = new VideoFX();
 
-
 /* DOM Elements */
 
 const button = document
   .querySelector('#call-button');
-  const selfVideo = document
-    .querySelector('#self');
+
+const selfVideo = document
+  .querySelector('#self');
 
 button.addEventListener('click', handleButton);
 
