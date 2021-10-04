@@ -57,7 +57,7 @@ button.addEventListener('click', handleButton);
 selfVideo.addEventListener('click', handleSelfVideo);
 
 document.querySelector('#header h1')
-  .innerText = `Welcome to TA Office Hours Room #${namespace}`;
+  .innerText = `Welcome to TA Office Hours Room`;
 
 /* User-Media/DOM */
 function displayStream(selector, stream) {
