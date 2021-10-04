@@ -47,7 +47,7 @@ $self.fx = new VideoFX();
 /* DOM Elements */
 
 const button = document
-  .querySelector('#call-button');
+  .querySelector('#call-button', '#mute-button', '#video-button');
 
 const selfVideo = document
   .querySelector('#self');
