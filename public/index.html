@@ -19,7 +19,7 @@
       autoplay
       playsinline>
     </video>
-    
+
     <h2>Host</h2>
     <video id="self"
       autoplay
@@ -29,6 +29,16 @@
 
     <button type="button" class="join" id="call-button">Join Call</button>
   </article>
+  <aside id="chatbox">
+      <h2 class"preserve-access"> Messages </h2>
+      <ol id= "chat-log"></ol>
+      <form id="chat-form" action="#null">
+        <label for="chat-msg" class="preserve-access">Compose Message</label>
+        <input type="text" id="chat-msg" name="chat-msg" autocomplete="off" />
+        <button type="submit" id="chat-btn">Send</button>
+
+      </form>
+  </aside>  
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://webrtchacks.github.io/adapter/adapter-latest.js"></script>
 <script src="javascripts/main.js"></script>
