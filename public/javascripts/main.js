@@ -47,12 +47,19 @@ $self.fx = new VideoFX();
 /* DOM Elements */
 
 const button = document
-  .querySelector('#call-button', '#mute-button', '#video-button');
+  .querySelector('#call-button');
+const buttonMute = document
+  .querySelector('mute-button');
 
 const selfVideo = document
   .querySelector('#self');
 
 button.addEventListener('click', handleButton);
+
+buttonMute.addEventListener('click', function buttonMute() {
+
+  console.log("mute button is clicked");
+});
 
 selfVideo.addEventListener('click', handleSelfVideo);
 
@@ -66,6 +73,8 @@ function displayStream(selector, stream) {
 }
 
 /* DOM Events */
+
+
 
 function handleButton(e) {
   const button = e.target;
@@ -100,6 +109,7 @@ function leaveCall() {
   displayStream('#peer', null);
   sc.close();
 }
+
 
 /* WebRTC Events */
 

@@ -44,14 +44,7 @@ button {
   background: #666;
   color: #EEE;
 }
-.mute {
-  background: #666;
-  color: #335EFF;
-}
-.videooff {
-  background: #666;
-  color: #FF3358;
-}
+
 #call-button {
   flex: 0 0 auto;
   box-sizing: border-box;
