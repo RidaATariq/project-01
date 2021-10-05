@@ -50,16 +50,15 @@ button {
   box-sizing: border-box;
   width: 200px;
 }
-video {
+#video {
   max-width: 100%;
   display: block;
-  position: relative;
+
 }
 #self {
   width: 25%;
-  position: absolute;
-  top: 10px;
-  left:10px;
+
+
   z-index: 1000;
   border: 1px solid #CCC;
 }
@@ -67,6 +66,11 @@ video {
   height: 50px;
   width: 50px;
 }
+
+
+
+
+
 
 /* Video Filters */
 /* filter from https://developer.mozilla.org/en-US/docs/Web/CSS/filter*/
