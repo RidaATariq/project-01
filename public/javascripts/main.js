@@ -48,6 +48,8 @@ const chatForm = document
 chatForm.addEventListener('submit',
  chatFormFun);
 
+
+
 /* User-Media/DOM */
 function displayStream(selector, stream) {
   const video = document.querySelector(selector);
