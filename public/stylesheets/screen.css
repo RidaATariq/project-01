@@ -38,14 +38,47 @@ html {
   padding: 10px;
 }
 .join {
-  background: #092;
-  color: #EEE;
+    color: #fff;
+  	text-transform: uppercase;
+  	background: #008000;
+  	padding: 20px;
+  	border-radius: 5px;
+  	display: inline-block;
+    border: none;
+  	transition: all 0.4s ease 0s;
+
 }
 .leave {
-  background: #666;
-  color: #EEE;
+  color: #fff;
+  text-transform: uppercase;
+  background: #D03D56;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+}
+.mute {
+  color: #fff;
+  text-transform: uppercase;
+  background: #008000;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
 }
 
+.videocut {
+  color: #fff;
+  text-transform: uppercase;
+  background: #008000;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+}
 #call-button {
   flex: 0 0 auto;
   box-sizing: border-box;
@@ -78,4 +111,15 @@ video {
   margin: 0 5px;
   display: flex;
   flex-direction: column;
+}
+
+.send {
+  color: #fff;
+  text-transform: uppercase;
+  background: #008000;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
 }
