@@ -50,7 +50,9 @@ buttonMute.addEventListener('click', function buttonMute() {
 
 selfVideo.addEventListener('click', handleSelfVideo);
 
+const chatForm = document.querySelector('#chat-form');
 
+chatForm.addEventListener('submit', chatFormFun)
 
 /* User-Media/DOM */
 function displayStream(selector, stream) {
@@ -87,6 +89,10 @@ function leaveCall() {
   $peer.connection = new RTCPeerConnection($self.rtcConfig);
   displayStream('#peer', null);
   sc.close();
+}
+
+function chatFormFun(e) {
+
 }
 
 
