@@ -87,16 +87,24 @@ function leaveCall() {
 
 function chatFormFun(e) {
   e.preventDefault();
+
   const form = e.target;
   const userInput = document.querySelector('#chat-msg');
   const message = userInput.value;
+
+  appendMessage('self', message);
+
   console.log ('customer message ', message);
   userInput.value = '';
 
 }
-function appendMessage (){
+function appendMessage (sender, message, chat-log){
+  const log = document.querySelector('#chat-log');
+  const li = document.createElement('li');
+  li.innerText = message;
+  li.className = sender;
+  log.appendChild(li);
 
-  
 }
 
 
