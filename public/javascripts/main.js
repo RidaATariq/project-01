@@ -35,24 +35,18 @@ registerScEvents();
 
 const button = document
   .querySelector('#call-button');
-const buttonMute = document
-  .querySelector('mute-button');
 
 const selfVideo = document
   .querySelector('#self');
 
 button.addEventListener('click', handleButton);
 
-buttonMute.addEventListener('click', function buttonMute() {
 
-  console.log("mute button is clicked");
-});
+const chatForm = document
+.querySelector('#chat-form');
 
-selfVideo.addEventListener('click', handleSelfVideo);
-
-const chatForm = document.querySelector('#chat-form');
-
-chatForm.addEventListener('submit', chatFormFun)
+chatForm.addEventListener('submit',
+ chatFormFun);
 
 /* User-Media/DOM */
 function displayStream(selector, stream) {
@@ -94,7 +88,7 @@ function leaveCall() {
 function chatFormFun(e) {
   e.preventDefault();
   const form = e.target;
-  const userInput = form.querySelector('#chat-msg');
+  const userInput = document.querySelector('#chat-msg');
   const message = userInput.value;
   console.log ('customer message ', message);
   userInput.value = '';
