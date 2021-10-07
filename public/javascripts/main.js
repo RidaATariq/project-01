@@ -114,6 +114,15 @@ function establishCallFeatures(peer) {
   peer.connection
     .addTrack($self.stream.getTracks()[0],
       $self.stream);
+
+  peer.chatChannel = peer.connection
+    .createDataChannel('chat',
+      { negotiated: true, id: 25});
+
+  peer.chatChannel.onmessage = function({ data }){
+    appendMessage('peer', data);
+
+  }
 }
 
 function registerRtcEvents(peer) {
