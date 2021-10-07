@@ -92,6 +92,12 @@ function leaveCall() {
 }
 
 function chatFormFun(e) {
+  e.preventDefault();
+  const form = e.target;
+  const userInput = form.querySelector('#chat-msg');
+  const message = userInput.value;
+  console.log ('customer message ', message);
+  userInput.value = '';
 
 }
 
