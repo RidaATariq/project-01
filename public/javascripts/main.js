@@ -94,6 +94,8 @@ function chatFormFun(e) {
 
   appendMessage('self', message);
 
+  $peer.chatChannel.send(message);
+
   console.log ('customer message ', message);
   userInput.value = '';
 
