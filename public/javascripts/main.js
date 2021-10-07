@@ -94,6 +94,10 @@ function chatFormFun(e) {
   userInput.value = '';
 
 }
+function appendMessage (){
+
+  
+}
 
 
 /* WebRTC Events */
