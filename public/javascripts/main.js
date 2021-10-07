@@ -100,7 +100,7 @@ function chatFormFun(e) {
   userInput.value = '';
 
 }
-function appendMessage (sender, message, chat-log){
+function appendMessage (sender, message){
   const log = document.querySelector('#chat-log');
   const li = document.createElement('li');
   li.innerText = message;
