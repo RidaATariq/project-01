@@ -30,19 +30,6 @@ const sc = io(`/${namespace}`, { autoConnect: false });
 
 registerScEvents();
 
-/* SpecialFX Classes */
-const VideoFX = class {
-  constructor() {
-    this.filters = ['grayscale', 'sepia', 'blur', 'none'];
-  }
-  cycleFilter() {
-    const filter = this.filters.shift();
-    this.filters.push(filter);
-    return filter;
-  }
-}
-
-$self.fx = new VideoFX();
 
 /* DOM Elements */
 
@@ -63,8 +50,7 @@ buttonMute.addEventListener('click', function buttonMute() {
 
 selfVideo.addEventListener('click', handleSelfVideo);
 
-document.querySelector('#header h1')
-  .innerText = `Welcome to TA Office Hours Room`;
+
 
 /* User-Media/DOM */
 function displayStream(selector, stream) {
@@ -89,14 +75,7 @@ function handleButton(e) {
   }
 }
 
-function handleSelfVideo(e) {
-  const filter = $self.fx.cycleFilter();
-  const dc = $peer.connection.createDataChannel(`filter-${filter}`);
-  e.target.className = `filter-${filter}`;
-  dc.onclose = function() {
-    console.log('The channel for', dc.label, 'is now closed');
-  }
-}
+
 
 function joinCall() {
   sc.open();

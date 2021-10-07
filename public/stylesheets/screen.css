@@ -50,7 +50,7 @@ button {
   box-sizing: border-box;
   width: 200px;
 }
-#video {
+video {
   max-width: 100%;
   display: block;
 
@@ -65,21 +65,4 @@ button {
 #logo {
   height: 50px;
   width: 50px;
-}
-
-
-
-
-
-
-/* Video Filters */
-/* filter from https://developer.mozilla.org/en-US/docs/Web/CSS/filter*/
-.filter-grayscale {
-  filter: grayscale(100%);
-}
-.filter-sepia {
-  filter: sepia(100%);
-}
-.filter-blur {
-  filter: blur(4px);
 }
