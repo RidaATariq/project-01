@@ -28,13 +28,13 @@ html {
   position: absolute;
   left: -10000px;
 }
-button {
+#button {
   font-family: inherit;
   font-size: inherit;
   font-weight: bold;
   border: 0;
   line-height: 1;
-  padding: 13px;
+  padding: 10px;
 }
 .join {
   background: #092;
@@ -53,16 +53,28 @@ button {
 video {
   max-width: 100%;
   display: block;
+}
 
+#peer {
+  width: 75;
+  border: 1px solid #CCC;
 }
 #self {
   width: 25%;
-
-
-  z-index: 1000;
   border: 1px solid #CCC;
 }
 #logo {
   height: 50px;
   width: 50px;
+}
+
+#chatbox {
+  height: 1000%;
+  min-height: 220px;
+  border: 1px solid #999;
+  float: right;
+  position: relative;
+  margin: 0 5px;
+  display: flex;
+  flex-direction: column;
 }
