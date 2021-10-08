@@ -33,6 +33,7 @@ registerScEvents();
 
 /* DOM Elements */
 
+
 const button = document
   .querySelector('#call-button');
 
@@ -49,15 +50,14 @@ chatForm.addEventListener('submit',
  chatFormFun);
 
 
-
 /* User-Media/DOM */
 function displayStream(selector, stream) {
   const video = document.querySelector(selector);
   video.srcObject = stream;
 }
 
-/* DOM Events */
 
+/* DOM Events */
 
 
 function handleButton(e) {
