@@ -15,6 +15,7 @@ html {
   padding: 13px;
   background: #add8e6;
 }
+
 #header {
   padding-bottom: 13px;
   display: flex;
@@ -24,6 +25,7 @@ html {
 #header h1 {
   flex: 3 3 auto;
   font-size: 40px;
+
 }
 .access {
   position: absolute;
@@ -38,15 +40,14 @@ html {
   padding: 10px;
 }
 .join {
-    color: #fff;
-  	text-transform: uppercase;
-  	background: #008000;
-  	padding: 20px;
-  	border-radius: 5px;
-  	display: inline-block;
-    border: none;
-  	transition: all 0.4s ease 0s;
-
+  color: #fff;
+  text-transform: uppercase;
+  background: #008000;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
 }
 .leave {
   color: #fff;
@@ -68,7 +69,6 @@ html {
   border: none;
   transition: all 0.4s ease 0s;
 }
-
 .videocut {
   color: #fff;
   text-transform: uppercase;
@@ -79,6 +79,8 @@ html {
   border: none;
   transition: all 0.4s ease 0s;
 }
+
+
 #call-button {
   flex: 0 0 auto;
   box-sizing: border-box;
@@ -88,38 +90,27 @@ video {
   max-width: 100%;
   display: block;
 }
-
-#peer {
-  width: 75;
-  border: 1px solid #CCC;
-}
 #self {
   width: 25%;
+  border: 1px solid #CCC;
+}
+#peer {
+  width: 50%;
   border: 1px solid #CCC;
 }
 #logo {
   height: 80px;
   width: 80px;
 }
-
 #chatbox {
-  height: 1000%;
-  min-height: 220px;
-  border: 1px solid #999;
-  float: right;
-  position: relative;
-  margin: 0 5px;
+
   display: flex;
   flex-direction: column;
-}
+  float: right;
+  border: 1px solid #CCC;
 
-.send {
-  color: #fff;
-  text-transform: uppercase;
-  background: #008000;
-  padding: 10px;
-  border-radius: 5px;
-  display: inline-block;
-  border: none;
-  transition: all 0.4s ease 0s;
+
+}
+#videos{
+  float: left;
 }
