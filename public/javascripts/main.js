@@ -231,6 +231,10 @@ async function handleScSignal({ description, candidate }) {
   if (description) {
     console.log('Received SDP Signal:', description);
 
+  if (description.type === '_reset'){
+    resetAndConnectAgain($peer);
+    return;
+  }
     const readyForOffer =
         !$self.isMakingOffer &&
         ($peer.connection.signalingState === 'stable'
@@ -251,7 +255,7 @@ async function handleScSignal({ description, candidate }) {
          await $peer.connection.setRemoteDescription(description);
        } catch(e) {
 
-
+         resetAndConnectAgain($peer);
          return;
        }
     $self.isSettingRemoteAnswerPending = false;
