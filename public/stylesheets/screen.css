@@ -113,3 +113,9 @@ video {
 #videos{
   float: left;
 }
+#chat-log .peer {
+  background: #CCC;
+}
+#chat-log .self {
+  background: #FFF;
+}
