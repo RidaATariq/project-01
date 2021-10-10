@@ -81,10 +81,15 @@ function joinCall() {
   establishCallFeatures($peer);
 }
 function leaveCall() {
-  $peer.connection.close();
-  $peer.connection = new RTCPeerConnection($self.rtcConfig);
-  displayStream('#peer', null);
+
+  resetCall($peer)
   sc.close();
+}
+
+function resetCall(peer) {
+  peer.connection.close();
+  peer.connection = new RTCPeerConnection($self.rtcConfig);
+
 }
 
 function chatFormFun(e) {
@@ -226,6 +231,7 @@ async function handleScSignal({ description, candidate }) {
        try {
          await $peer.connection.setRemoteDescription(description);
        } catch(e) {
+
 
          return;
        }
