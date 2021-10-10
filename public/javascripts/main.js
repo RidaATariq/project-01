@@ -221,7 +221,14 @@ async function handleScSignal({ description, candidate }) {
     }
 
     $self.isSettingRemoteAnswerPending = description.type === 'answer';
-    await $peer.connection.setRemoteDescription(description);
+    console.log('Incoming info:',
+         $peer.connection.signalingState);
+       try {
+         await $peer.connection.setRemoteDescription(description);
+       } catch(e) {
+
+         return;
+       }
     $self.isSettingRemoteAnswerPending = false;
 
     if (description.type === 'offer') {
