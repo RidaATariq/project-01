@@ -81,7 +81,6 @@ function joinCall() {
   establishCallFeatures($peer);
 }
 function leaveCall() {
-
   resetCall($peer)
   sc.close();
 }
@@ -89,6 +88,16 @@ function leaveCall() {
 function resetCall(peer) {
   peer.connection.close();
   peer.connection = new RTCPeerConnection($self.rtcConfig);
+
+}
+
+function resetAndConnectAgain(peer) {
+  resetCall(peer);
+  $self.isMakingOffer = false;
+  $self.isIgnoringOffer = false;
+  $self.isSettingRemoteAnswerPending = false;
+
+
 
 }
 
@@ -146,6 +155,7 @@ function registerRtcEvents(peer) {
 }
 
 async function handleRtcNegotiation() {
+
   console.log('RTC negotiation needed...');
   // send an SDP description
 
