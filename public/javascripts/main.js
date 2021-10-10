@@ -96,7 +96,7 @@ function resetAndConnectAgain(peer) {
   $self.isMakingOffer = false;
   $self.isIgnoringOffer = false;
   $self.isSettingRemoteAnswerPending = false;
-
+  $self.isSuppressingInitialOffer = $self.isPolite;
 
 
 }
@@ -155,7 +155,8 @@ function registerRtcEvents(peer) {
 }
 
 async function handleRtcNegotiation() {
-
+  if ($self.isSuppressingInitialOffer)
+  return;
   console.log('RTC negotiation needed...');
   // send an SDP description
 
@@ -257,6 +258,8 @@ async function handleScSignal({ description, candidate }) {
         sc.emit('signal',
           { description:
             $peer.connection.localDescription });//desicing and sending description
+ 
+        $self.isSuppressingInitialOffer = false;
       }
     }
   } else if (candidate) {
