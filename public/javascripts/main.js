@@ -89,7 +89,7 @@ function resetCall(peer) {
   displayStream('#peer', null);
   peer.connection.close();
   peer.connection = new RTCPeerConnection($self.rtcConfig);
-  
+
 }
 
 function resetAndConnectAgain(peer) {
