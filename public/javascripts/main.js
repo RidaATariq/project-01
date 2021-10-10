@@ -86,9 +86,10 @@ function leaveCall() {
 }
 
 function resetCall(peer) {
+  displayStream('#peer', null);
   peer.connection.close();
   peer.connection = new RTCPeerConnection($self.rtcConfig);
-
+  
 }
 
 function resetAndConnectAgain(peer) {
@@ -220,9 +221,7 @@ function handleScConnectedPeer() {
 }
 function handleScDisconnectedPeer() {
   console.log('Heard disconnected peer event!');
-  displayStream('#peer', null);
-  $peer.connection.close();
-  $peer.connection = new RTCPeerConnection($self.rtcConfig);
+  resetCall($peer);
   registerRtcEvents($peer);
   establishCallFeatures($peer);
 }
