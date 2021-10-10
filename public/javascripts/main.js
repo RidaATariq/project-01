@@ -146,13 +146,13 @@ async function handleRtcNegotiation() {
 
   try {
     $self.isMakingOffer = true;
-    await $peer.connection.setLocalDescription();
+    await $peer.connection.setLocalDescription();//running with the new options
   } catch(e) {
-    const request = await $peer.connection.createOffer();
+    const request = await $peer.connection.createOffer();// running with the old optinos
     await $peer.connection.setLocalDescription(request);
   } finally {
     sc.emit('signal', { description:
-      $peer.connection.localDescription });
+      $peer.connection.localDescription });//deciding and making offer
     $self.isMakingOffer = false;
   }
 }
@@ -226,14 +226,14 @@ async function handleScSignal({ description, candidate }) {
 
     if (description.type === 'offer') {
       try {
-        await $peer.connection.setLocalDescription();
+        await $peer.connection.setLocalDescription(); // running with new options
       } catch(e){
-        const response = await $peer.connection.createResponse();
+        const response = await $peer.connection.createResponse();//running with older options
         await $peer.connection.setLocalDescription(response);
       } finally{
         sc.emit('signal',
           { description:
-            $peer.connection.localDescription });
+            $peer.connection.localDescription });//desicing and sending description
       }
     }
   } else if (candidate) {
