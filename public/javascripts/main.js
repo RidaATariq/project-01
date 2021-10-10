@@ -97,7 +97,15 @@ function resetAndConnectAgain(peer) {
   $self.isIgnoringOffer = false;
   $self.isSettingRemoteAnswerPending = false;
   $self.isSuppressingInitialOffer = $self.isPolite;
+  registerScEvents(peer);
+  establishCallFeatures(peer);
 
+  if ($self.isPolite){
+    sc.emit('signal',
+      {description:
+        {type: '_reset'}
+      });
+  }
 
 }
 
@@ -258,7 +266,7 @@ async function handleScSignal({ description, candidate }) {
         sc.emit('signal',
           { description:
             $peer.connection.localDescription });//desicing and sending description
- 
+
         $self.isSuppressingInitialOffer = false;
       }
     }
