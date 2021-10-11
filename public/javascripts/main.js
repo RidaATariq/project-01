@@ -21,6 +21,7 @@ async function requestUserMedia(constraints) {
   displayStream('#self', $self.stream);
 }
 
+
 /**
 * Socket Server Events and Callbacks
 */
@@ -50,6 +51,9 @@ const chatForm = document
 chatForm.addEventListener('submit',
  chatFormFun);
 
+ const vidbutton = document
+   .querySelector('#video-button');
+
 /* User-Media/DOM */
 function displayStream(selector, stream) {
   const video = document.querySelector(selector);
@@ -59,6 +63,13 @@ function displayStream(selector, stream) {
 
 /* DOM Events */
 
+//adding eventlistener with the function in it to pause the video
+vidbutton.addEventListener("click", function stopStream() {
+  console.log("Video Paused");
+  $self.stream.getVideoTracks().forEach(function (track) {
+    track.stop();
+  });
+});
 
 function handleButton(e) {
   const button = e.target;
