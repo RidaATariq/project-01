@@ -71,6 +71,7 @@ vidbutton.addEventListener("click", function stopStream() {
   });
 });
 
+
 function handleButton(e) {
   const button = e.target;
   if (button.className === 'join') {
