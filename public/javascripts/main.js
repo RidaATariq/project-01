@@ -80,12 +80,12 @@ function stopAud(e){
   if (audbutton.className === 'audiocut') {
     audbutton.className = 'mute';
     audbutton.innerText = 'Muted';
-    $self.constraints.audio = false;
+    $self.constraints.audio = false
     console.log('Audio Stopped');
   } else {
     audbutton.className = 'audiocut';
     audbutton.innerText = 'UnMute';
-    $self.constraints.audio = true;
+    $self.constraints.audio = true
     console.log('Audio On');
   }
 
