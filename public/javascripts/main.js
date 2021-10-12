@@ -55,6 +55,13 @@ chatForm.addEventListener('submit',
  const vidbutton = document
    .querySelector('#video-button');
 
+
+const audbutton = document
+   .querySelector('#audio-button');
+
+audbutton.addEventListener('click',
+ stopAud);
+
 /* User-Media/DOM */
 function displayStream(selector, stream) {
   const video = document.querySelector(selector);
@@ -67,6 +74,23 @@ function audioStream(selector, stream) {
 
 /* DOM Events */
 
+function stopAud(e){
+
+  const audbutton = e.target;
+  if (audbutton.className === 'audiocut') {
+    audbutton.className = 'mute';
+    audbutton.innerText = 'Muted';
+    $self.constraints.audio = false;
+    console.log('Audio Stopped');
+  } else {
+    audbutton.className = 'audiocut';
+    audbutton.innerText = 'UnMute';
+    $self.constraints.audio = true;
+    console.log('Audio On');
+  }
+
+}
+
 //adding eventlistener with the function in it to pause the video
 vidbutton.addEventListener("click", function stopStream() {
   console.log("Video Paused");
@@ -74,6 +98,7 @@ vidbutton.addEventListener("click", function stopStream() {
     track.stop();
   });
 });
+
 
 
 function handleButton(e) {
