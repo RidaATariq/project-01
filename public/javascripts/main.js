@@ -52,8 +52,11 @@ const chatForm = document
 chatForm.addEventListener('submit',
  chatFormFun);
 
- const vidbutton = document
+ const vidButton = document
    .querySelector('#video-button');
+
+vidButton.addEventListener('click',
+ stopVid);
 
 
 const audbutton = document
@@ -91,13 +94,23 @@ function stopAud(e){
 
 }
 
+
+function stopVid(e) {
+
+  const vidSt = $self.stream.getVideoTracks()[0];
+  const vidButton = e.target;
+  if (vidButton.className === 'videocut') {
+    vidButton.className = 'vidOff';
+    vidButton.innerText = 'OFF';
+    vidSt.enabled = false;
+  } else {
+    vidButton.className = 'videocut';
+    vidButton.innerText = 'ON';
+    vidSt.enabled = true;
+  }
+}
+
 //adding eventlistener with the function in it to pause the video
-vidbutton.addEventListener("click", function stopStream() {
-  console.log("Video Paused");
-  $self.stream.getVideoTracks().forEach(function (track) {
-    track.stop();
-  });
-});
 
 
 
