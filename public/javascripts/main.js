@@ -79,17 +79,18 @@ function audioStream(selector, stream) {
 
 function stopAud(e){
 
+  const audSt = $self.stream.getAudioTracks()[0];
   const audbutton = e.target;
   if (audbutton.className === 'audiocut') {
     audbutton.className = 'mute';
     audbutton.innerText = 'Muted';
-    $self.constraints.audio = false
+    audSt.enabled = false;
     console.log('Audio Stopped');
   } else {
     audbutton.className = 'audiocut';
     audbutton.innerText = 'UnMute';
-    $self.constraints.audio = true
-    console.log('Audio On');
+    audSt.enabled = true;
+    console.log('Audio Started');
   }
 
 }
@@ -103,10 +104,12 @@ function stopVid(e) {
     vidButton.className = 'vidOff';
     vidButton.innerText = 'OFF';
     vidSt.enabled = false;
+      console.log('Video Stopped');
   } else {
     vidButton.className = 'videocut';
     vidButton.innerText = 'ON';
     vidSt.enabled = true;
+      console.log('Video Started');
   }
 }
 
