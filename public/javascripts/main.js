@@ -101,12 +101,12 @@ function stopVid(e) {
   const vidButton = e.target;
   if (vidButton.className === 'videocut') {
     vidButton.className = 'vidOff';
-    vidButton.innerText = 'ON';
+    vidButton.innerText = 'Video ON';
     vidSt.enabled = false;
       console.log('Video Stopped');
   } else {
     vidButton.className = 'videocut';
-    vidButton.innerText = 'OFF';
+    vidButton.innerText = 'Video Off';
     vidSt.enabled = true;
       console.log('Video Started');
   }
