@@ -19,7 +19,6 @@ async function requestUserMedia(constraints) {
   $self.stream = await navigator.mediaDevices
     .getUserMedia(constraints);
   displayStream('#self', $self.stream);
-  audioStream('#self', $self.stream);
 }
 
 
@@ -71,10 +70,6 @@ function displayStream(selector, stream) {
   video.srcObject = stream;
 }
 
-function audioStream(selector, stream) {
-  const audio = document.querySelector(selector);
-  audio.srcObject = stream;
-}
 
 /* DOM Events */
 //function for Audio on and off button
@@ -148,7 +143,6 @@ function leaveCall() {
 
 function resetCall(peer) {
   displayStream('#peer', null);
-  audioStream('#peer', null);
   peer.connection.close();
   peer.connection = new RTCPeerConnection($self.rtcConfig);
 
@@ -258,7 +252,6 @@ function handleIceCandidate({ candidate }) {
 function handleRtcTrack({ track, streams: [stream] }) {
   // attach incoming track to the DOM
   displayStream('#peer', stream);
-  audioStream('#peer', stream);
 }
 
 function handleRtcDataChannel({ channel }) {
