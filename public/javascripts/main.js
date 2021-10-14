@@ -83,12 +83,12 @@ function stopAud(e){
   const audbutton = e.target;
   if (audbutton.className === 'audiocut') {
     audbutton.className = 'mute';
-    audbutton.innerText = 'Muted';
+    audbutton.innerText = 'UnMute';
     audSt.enabled = false;
     console.log('Audio Stopped');
   } else {
     audbutton.className = 'audiocut';
-    audbutton.innerText = 'UnMute';
+    audbutton.innerText = 'Mute';
     audSt.enabled = true;
     console.log('Audio Started');
   }
