@@ -95,19 +95,18 @@ function stopAud(e){
 
 }
 
-
 function stopVid(e) {
 
   const vidSt = $self.stream.getVideoTracks()[0];
   const vidButton = e.target;
   if (vidButton.className === 'videocut') {
     vidButton.className = 'vidOff';
-    vidButton.innerText = 'OFF';
+    vidButton.innerText = 'ON';
     vidSt.enabled = false;
       console.log('Video Stopped');
   } else {
     vidButton.className = 'videocut';
-    vidButton.innerText = 'ON';
+    vidButton.innerText = 'OFF';
     vidSt.enabled = true;
       console.log('Video Started');
   }
