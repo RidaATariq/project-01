@@ -144,3 +144,8 @@ video {
   float: right;
   clear: both;
 }
+#chat-log::after {
+  content: "";
+  display: block;
+  clear: both;
+}
