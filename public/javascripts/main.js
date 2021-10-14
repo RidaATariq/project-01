@@ -70,13 +70,14 @@ function displayStream(selector, stream) {
   const video = document.querySelector(selector);
   video.srcObject = stream;
 }
+
 function audioStream(selector, stream) {
   const audio = document.querySelector(selector);
   audio.srcObject = stream;
 }
 
 /* DOM Events */
-
+//function for Audio on and off button
 function stopAud(e){
 
   const audSt = $self.stream.getAudioTracks()[0];
@@ -94,7 +95,7 @@ function stopAud(e){
   }
 
 }
-
+//function for the vido on and off button
 function stopVid(e) {
 
   const vidSt = $self.stream.getVideoTracks()[0];
@@ -115,7 +116,7 @@ function stopVid(e) {
 //adding eventlistener with the function in it to pause the video
 
 
-
+//function for join and leave call
 function handleButton(e) {
   const button = e.target;
   if (button.className === 'join') {
@@ -130,16 +131,20 @@ function handleButton(e) {
 }
 
 
-
+// function that joins the call
 function joinCall() {
   sc.open();
   registerRtcEvents($peer);
   establishCallFeatures($peer);
 }
+
+// function that joins the call
+
 function leaveCall() {
   resetCall($peer)
   sc.close();
 }
+// function that resets the connection
 
 function resetCall(peer) {
   displayStream('#peer', null);
@@ -148,6 +153,7 @@ function resetCall(peer) {
   peer.connection = new RTCPeerConnection($self.rtcConfig);
 
 }
+// function that resets the connection and establishes it again
 
 function resetAndConnectAgain(peer) {
   resetCall(peer);
@@ -166,7 +172,7 @@ function resetAndConnectAgain(peer) {
   }
 
 }
-
+// function to handle chat messages
 function chatFormFun(e) {
   e.preventDefault();
 
@@ -182,6 +188,7 @@ function chatFormFun(e) {
   userInput.value = '';
 
 }
+//function to show messages
 function appendMessage (sender, message){
   const log = document.querySelector('#chat-log');
   const li = document.createElement('li');
@@ -194,6 +201,7 @@ function appendMessage (sender, message){
 
 /* WebRTC Events */
 
+//function that handles all the connection
 function establishCallFeatures(peer) {
 //vdieo track
   peer.connection
