@@ -24,7 +24,7 @@ html {
 }
 #header h1 {
   flex: 3 3 auto;
-  font-size: 40px;
+  font-size: 22px;
 
 }
 .access {
@@ -39,6 +39,8 @@ html {
   line-height: 1;
   padding: 10px;
 }
+
+/* style for the button  */
 .join {
   color: #fff;
   text-transform: uppercase;
